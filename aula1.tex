@@ -7,8 +7,6 @@
 
 % See https://github.com/CASSON-LAB/uom_beamer_template
 % for details on license, further useage information and similar
-
-\graphicspath{fig/aula1/}
 %%%%%%%%%%%%%%%%%% DOCUMENT SETUP %%%%%%%%%%%%%%%%%%
 
 % Presentation settings
@@ -56,7 +54,7 @@
   xleftmargin=0pt,
 }
 \usepackage{graphicx}  % for graphics files
-  \graphicspath{ {./fig/} }
+  \graphicspath{ {./fig/aula1} }
 \usepackage{amsmath}   % assumes amsmath package installed
   \allowdisplaybreaks[1] % allow eqnarrays to break across pages
 \usepackage{amssymb}   % assumes amsmath package installed 
@@ -121,15 +119,10 @@
 \subtitle{Aula 1}
 \author{Prof. Me. Juliana Costa-Silva}
 \begin{document}
-
-
-
 %%%%%%%%%%%%%%%%%% TITLE SLIDE %%%%%%%%%%%%%%%%%%
-\mode<presentation>{ \frame{
-  \titlepage \label{slide:a}
-}} 
-\begin{figure}[!ht] 
-\fbox{\includeslide[width=\textwidth]{slide:a}} \end{figure}
+\mode<presentation>{ \frame{\titlepage \label{slide:a}}} 
+%\begin{figure}[!ht] 
+%\fbox{\includeslide[width=\textwidth]{slide:a}} \end{figure}
 
 
 
@@ -138,10 +131,9 @@
 \mode<presentation>{ 
 \begin{frame}{Na aula de hoje...}
   \setbeamertemplate{section in toc}[sections numbered]
-  \tiny{
-  \tableofcontents[hideallsubsections]
-  }
+  \tiny{\tableofcontents[hideallsubsections]}
 \end{frame}}
+%------------------------------
 \section{Apresentação}
 \mode<presentation>{
 \begin{frame}{Sobre a Disciplina}
