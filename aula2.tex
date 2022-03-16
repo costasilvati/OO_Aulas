@@ -33,26 +33,26 @@
 
 % Packages
 
-\usepackage{listings}
 % Configurando layout para mostrar codigos C++
 \usepackage{listings}
 \lstset{
-  language=Java,
+  language=HTML,
   basicstyle=\ttfamily\small, 
   keywordstyle=\color{blue}, 
-  stringstyle=\color{orange}, 
-  commentstyle=\color{gray}, 
+  stringstyle=\color{red}, 
+  commentstyle=\color{red}, 
   extendedchars=true, 
   showspaces=false, 
   showstringspaces=false, 
   numbers=left,
   numberstyle=\tiny,
   breaklines=true, 
-  backgroundcolor=\color{blue!7},
+  backgroundcolor=\color{green!10},
   breakautoindent=true, 
   captionpos=b,
   xleftmargin=0pt,
 }
+
 \usepackage{graphicx}  % for graphics files
   \graphicspath{ {./fig/aula2} }
 \usepackage{amsmath}   % assumes amsmath package installed
@@ -165,7 +165,7 @@ A concatenação de String é realizada com o uso do operador (+)
 \mode<presentation>{ \begin{frame}{Tipos de dados}
   Java é uma linguagem \textbf{fortemente tipada}, ou seja, só podemos usar uma 
 variável depois de definirmos um tipo pra ela.\\
-\metroset{block=fill}
+
   \vspace{0.5cm}
    As variáveis podem ser de dois tipos:\\
    
@@ -174,11 +174,11 @@ variável depois de definirmos um tipo pra ela.\\
 simplesmente armazenam um valor.}
    \end{block}
   \vspace{0.5cm}
-  \pause
-   \begin{alertblock}{Tipos de dados Construídos}
+
+   \begin{block}{Tipos de dados Construídos}
      \textit{São as classes construídas, que podem estar definidas no Java ou 
 serem criadas pelo programador.}
-   \end{alertblock}
+   \end{block}
 \end{frame}}
 %----------------------------------------------------------------------------
 \mode<presentation>{ \begin{frame}{Tipos de dados Primitivos}
@@ -330,20 +330,146 @@ esquerda.
    \includegraphics[height=0.65\paperheight]{precedencia.png} \\
  \end{center}
 \end{frame}}
+
+%-------------------------------------------------------------------------
+\section{Estruturas de controle}
+\subsection{Estruturas de seleção}
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - IF}
+  A partir do teste de uma condição executa ou não um conjunto de instruções.
+\begin{center}
+   \includegraphics[height=0.5\paperheight]{if.png} \\
+ \end{center}
+\end{frame}}
+%-------------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - IF}
+ \begin{center} 
+\lstinputlisting[linerange={3-6}]{./cod/Aula3Exemplos.java}
+  \end{center}
+\begin{center}
+   \includegraphics[height=0.3\paperheight]{if_fluxo.png} \\
+ \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - IF/ ELSE}
+ \begin{center}  
+  \lstinputlisting[linerange={3-8}]{./cod/Aula3Exemplos.java}
+ \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas aninhadas}
+ 
+\begin{center}
+  \lstinputlisting[linerange={10-23}]{
+./cod/Aula3Exemplos.java}
+ \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas aninhadas}
+ 
+\begin{center}
+  \lstinputlisting[linerange={26-35}]{
+./cod/Aula3Exemplos.java}
+ \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Operador Ternário}
+ teste lógico ? valorSeVerdadeiro : valorSeFalso
+ \begin{center}
+   \includegraphics[height=0.3\paperheight]{ternario.png} \\
+   Exemplo:\\
+  \lstinputlisting[linerange={38-38}]{
+./cod/Aula3Exemplos.java}
+ \end{center}
+\end{frame}}
+%-------------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - \textbf{Switch}}
+  Chamada de \textbf{estrutura de seleção múltipla}, pois a partir da 
+comparação de um valor passado com os outros valores definidos, seleciona um 
+ponto do qual iniciará a execução de um conjunto de instruções.
+ \begin{center} 
+\lstinputlisting[linerange={40-48}]{./cod/Aula3Exemplos.java}
+  \end{center}
+\end{frame}}
+%-------------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - \textbf{Switch}}
+ \begin{center}
+   \includegraphics[height=0.6\paperheight]{switch.png} \\
+  \end{center}
+\end{frame}}
+%-------------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Estruturas de seleção - \textbf{Switch}}
+ \begin{center} 
+\lstinputlisting[linerange={49-59}]{./cod/Aula3Exemplos.java}
+  \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\section{Atividades}
+\mode<presentation>{ \begin{frame}{Atividade}
+  \textbf{1.} Faça um programa usando os operadores relacionais que escreva no 
+console, seguinte saída:
+  \begin{center}
+   \includegraphics[height=0.6\paperheight]{atividade1_aula3.png} \\
+  \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Atividade}
+  \textbf{2.} Examine o código abaixo e determine qual o valor das variáveis i, 
+j, x e y depois desses passos.
+  \begin{center}
+   \includegraphics[height=0.4\paperheight]{atividade2_aula3.png} \\
+  \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Atividade}
+  \textbf{3.} Crie um programa que obtenha a média de 3 números. Considere o 
+valor para os três números como sendo 10, 20 e 45. O resultado esperado do 
+exercício é:
+  \begin{center}
+   número1 com o valor 10\\
+   número2 com o valor 20\\
+   número3 com o valor 45\\
+   A média é 25
+  \end{center}
+    \textbf{4.} Dada as expressões abaixo, reescreva-as utilizando parênteses 
+de acordo com a forma como elas são interpretadas pelo compilador.
+  \begin{center}    
+\lstinputlisting[linerange={60-62}]{./cod/Aula3Exemplos.java}
+  \end{center}
+\end{frame}}
+%----------------------------------------------------------------------
+\mode<presentation>{ \begin{frame}{Atividade}
+  \textbf{5.} Faça um programa que leia três números reais representando os 
+lados de um triângulo. Primeiramente verifique se os três lados formam um 
+triângulo. Caso não formam imprima uma mensagem de erro para o usuário. Caso os 
+lados formem um triângulo imprima qual é o tipo dele. Lembre-se que:
+\begin{table}[]
+\centering
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\textbf{Nota}} & \multicolumn{1}{c}{\textbf{Conceito}} & 
+\multicolumn{1}{c}{\textbf{Significado}} \\
+10 ou 9 & E & Excelente \\
+8 ou 7 & MS & Médio superior \\
+6 ou 5 & M & Médio \\
+4 ou 3 & MI & Médio Insuficiente \\
+2 ou 1 ou 0 & I & Insuficiente
+\end{tabular}
+\end{table}
+\end{frame}
+}
 %------------------------------
 \section{Leitura recomendada}
 \mode<presentation>{ \begin{frame}{Leitura complementar}
  Para mais informações sobre JAVA, leia:\\
 	\begin{columns}
 	\begin{column}{0.5\textwidth}
-	 Capítulo 1:
+	 Capítulo 1 e 2:
 	 \cite{deitel2017java}
 	\end{column}
 	\begin{column}{0.4\textwidth}
 	\includegraphics[height=0.6\paperheight]{fig/aula1/deitel2017java.png} 
 	\end{column}
 	\end{columns}
-	\textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
+	%\textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
 \end{frame}}
 
  %----------------------------------------------------------------------------
