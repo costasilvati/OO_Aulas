@@ -1,0 +1,123 @@
+%%% Template para anotações de aula
+%%% Feito por Daniel Campos com base no template de Willian Chamma que fez com base no template de Mikhail Klassen
+
+
+
+\documentclass[12pt,a4paper, brazil]{article}
+
+%%%%%%% INFORMAÇÕES DO CABEÇALHO
+\newcommand{\workingDate}{\textsc{\selectlanguage{portuguese}\today}}
+\newcommand{\userName}{DesSoftware}
+\newcommand{\institution}{Universidade Positivo - Londrina}
+\usepackage{researchdiary_png}
+
+
+
+
+\begin{document}
+
+\begin{center}
+{\textbf {\huge Atividade Prática 3 - Bimestre 2}}\\[5mm]
+{\large Desenvolvimento de Software 2023-1} \\
+{\large Prof. Me. Juliana Costa Silva} \\
+\today\\[5mm] %% se quiser colocar data
+\end{center}
+% TEMPLATE DE ATIVIDADE: https://www.overleaf.com/latex/templates/template-para-relatorio-tecnico-memorial-descritivo-utfpr/ywygvmqcqysy
+
+\section*{Orientações}
+
+\begin{itemize}
+  \item Desenvolva todas as atividades em linguagem Java, outras linguagens não serão aceitas na entrega;
+  \item É ideal compreender o código desenvolvido, entende o problema e, planeje a solução antes de implementar;
+  \item \textbf{Esta lista terá uma das atividades sorteada para resolução em sala de aula, manuscrita (no papel)}. Esta atividade será realizada unicamente em data a definir as 19:00hs com 20 minutos para entrega e sem consulta;
+  \item Será avaliada apenas a atividade entregue no papel, com enfase na lógica de programação e uso correto dos conceitos de Orientação a Objetos, \textit{pequenos erros de sintaxe} serão desconsiderados;
+  \item A lista de atividades deve ser resolvida individualmente. Os alunos podem discutir as soluções e eventualmente ajudar a resolução de um colega, porém a cópia, integral ou parcial de código não é permitida. Desse modo alunos com códigos iguais ou com alta similaridade terão suas atividades ANULADAS, recebendo 0,0 como nota nesta atividade.
+\end{itemize}
+
+
+\vspace{0.5cm}
+
+
+\section{Supermercado}
+\par
+Identifique as classes e implemente um programa para a seguinte especificação: “O supermercado vende diferentes tipos de produtos, cada um com uma alíquota de imposto. Cada produto tem um preço e uma quantidade em estoque. Um pedido de um cliente é composto de itens, onde cada item especifica o produto que o cliente deseja e a respectiva quantidade. Esse pedido pode ser pago em dinheiro, cheque ou cartão. Deve ser exibido o valor total do pedido e o valor de impostos pagos.”
+
+ \dotfill
+
+\section{Agenda}
+\par
+Faça um programa de agenda telefônica, com as classes Agenda e Contato. Nesse programa deve ser possível buscar contato por nome ou e-mail, ou por parte do contato (trecho do nome ou e-mail, telefone). 
+\begin{itemize}
+    \item Adicione o registro de mais de um telefone por contato na agenda;
+    \item Adicione o registro de endereço comercial e residencial por contato na agenda.
+\end{itemize}
+
+ \dotfill
+
+\section{Empréstimo}
+\par
+Faça um programa para controle de empréstimo de ferramentas, com as classes Emprestimo, Ferramenta e Pessoa. Deve ser possível ver Pessoas, Ferramentas e Emprestimos, além de relatório de ferramentas emprestadas.
+
+ \dotfill
+
+\section{Genealogia}
+\par
+Faça uma programa para representar a árvore genealógica de uma família. Para tal, crie uma classe Pessoa que permita indicar, além de nome e idade, o pai e a mãe. Tenha em mente que pai e mãe também são do tipo Pessoa.
+ \dotfill
+
+\section{Área}
+\par
+
+Faça um programa que calcule a área de uma figura geométrica. Aceite quatro tipos de figuras geométricas: quadrado, retângulo, triângulo e círculo. Use herança e polimorfismo.
+
+ \dotfill
+
+ \section{Pluviometros}
+ \par
+ Um órgão de levantamento meteorológico possui equipamentos para medir a pluviosidade (pluviômetros), onde cada unidade é representada em um programa de computador por um objeto da classe:
+
+public class Pluviometro \{
+\par
+ protected String tipo; \par
+ 
+ public Pluviometro(String tipo)\{ \par
+  : \par
+ \}\par
+ public String getTipo()\{ \par
+ : \par
+ \} \par
+ public int getPeso()\{ \par
+ : \par
+ \} \par
+ public int getCapacidade()\{ \par
+ : \par
+ \} \par
+\} \par
+
+\begin{itemize}
+    \item \textbf{Construtor:} Recebe como parâmetro o tipo de equipamento.
+    \item \textbf{getTipo:} Retorna o tipo do pluviômetro.
+    \item \textbf{getPeso:} Retorna o peso do pluviômetro em quilos. Este peso é calculado automaticamente pela classe a partir do tipo.
+    \item \textbf{getCapacidade:} Retorna a capacidade do pluviômetro em mililitros. Esta capacidade é calculada automaticamente pela classe a partir do tipo.
+\end{itemize}
+Os pluviômetros são carregados por caminhões que, no programa de computador, são representados genericamente por objetos da classe Caminhao (esta classe não deve ser implementada nesta questão). \\
+A classe define os seguintes métodos:
+\begin{itemize}
+    \item \textbf{Construtor:} Recebe como parâmetro a quantidade de equipamentos que o caminhão irá carregar.
+    \item \textbf{inserePluviometro:} Recebe como parâmetro um objeto da classe Pluviometro e o coloca dentro do caminhão se a capacidade do mesmo permitir.
+\end{itemize}
+
+
+Cada objeto da classe representa um caminhão. Esta classe não possui nenhum atributo e seus métodos não possuem implementação, pois serão implementados nas subclasses.
+Escreva duas classes herdeiras da classe Caminhao que representam dois tipos deste veículo com capacidades diferentes:
+\begin{itemize}
+    \item \textbf{Caminhão Alfa: }Consegue carregar no máximo 5 toneladas de pluviômetros, independente da quantidade e tipo.
+    \item \textbf{Caminhão Beta: } Consegue carregar qualquer quantidade e peso de pluviômetros, no entanto, não é capaz de carregar mais do que um pluviômetro de cada tipo.
+\end{itemize}
+
+Ambas as classes devem sobrescrever o método inserePluviometro.
+
+%%% as referências devem estar em formato bibTeX no arquivo referencias.bib
+% \printbibliography
+
+\end{document}

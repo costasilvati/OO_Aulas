@@ -115,8 +115,8 @@
 
 
 %%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
-\title{Análise Orientada a objetos}
-\subtitle{Aula 9}
+\title{Desenvolvimento de Software}
+\subtitle{Aula 7}
 \author{Prof. Me. Juliana Costa-Silva}
 
 \begin{document}
@@ -134,163 +134,77 @@
 \tableofcontents 
 \end{frame}
 }
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\section{Classe Time1}
-\begin{frame}{Time1.java}
-\small{ 
-\lstinputlisting[linerange={2-12}]{./cod/Time1.java}}
-\end{frame}}
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Time1.java - Parte II}
-\small{ 
-\lstinputlisting[linerange={13-24}]{./cod/Time1.java}}
-\end{frame}}
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Entendendo...}
-O que fizemos nesse trecho?
- \small{ 
-\lstinputlisting[linerange={2-5}]{./cod/Time1.java}}
-\end{frame}}
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Entendendo...}
-O que faz esse método?
- \small{ 
-\lstinputlisting[linerange={7-11}]{./cod/Time1.java}}
-\end{frame}}
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Entendendo...}
-O que não entendemos nos métodos abaixo?
- \small{ 
-\lstinputlisting[linerange={13-15}]{./cod/Time1.java}}
-\pause
- \small{ 
-\lstinputlisting[linerange={17-22}]{./cod/Time1.java}}
-Anote as explicações, como comentários no código
-\end{frame}}
-%----------------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Testando...}
-Crie uma classe Time1Test e declare um método main() nessa classe. E faça testes!
- \small{ 
-\lstinputlisting[linerange={2-9}]{./cod/Time1Test.java}}
-Não se esqueça de fechar as chaves da classe e da main()!!
-\end{frame}}
 
-%----------------------------------------------------------------------------
+%------------------------------------------------------------
 \mode<presentation>{
-\begin{frame}{Testando II}
- \small{ 
-\lstinputlisting[linerange={11-17}]{./cod/Time1Test.java}}
- 
+\section{Encapsulamento}
+\begin{frame}{Encapsulamento}
+  \begin{block}{Encapsulamento}
+      Conceitua-se encapsulamento como sendo o processo utilizado para proteger os campos e operações de uma classe (atributos e métodos), permitindo que apenas os membros públicos - em Java métodos Get / Set - sejam acessados pelos usuários de determinada classe.
+  \end{block}
 \end{frame}}
-
-%----------------------------------------------------------------------
+%------------------------------------------------------------
 \mode<presentation>{
-\section{Controle de acesso}
-\begin{frame}{Controle de acesso}
-Altere o valor dos atributos na main() da classe TimeTest.java
- \small{ 
-\lstinputlisting[linerange={25-27}]{./cod/Time1Test.java}}
-\pause
-\textcolor{red}{Exception in thread ``main'' java.lang.RuntimeException: 
-  Uncompilable source code \- hora has private access in Time1Test}\\
-\pause
-\vspace{0.3cm}
-\begin{block}{Como editar os valores?}
- Os valores serão editados, somente utilizando o construtor da classe, ou com a 
-chamada dos métodos que fazem a  edição, nesse caso método \underline{setTime}.
-\\
- Isso se deve ao operador de visibilidade \textcolor{purple}{private}.
+\begin{frame}{Encapsulamento}
+  \begin{block}{Encapsulamento}
+  Vantagens do encapsulamento: \\
+      \begin{enumerate}
+          \item \textbf{Segurança} - a comunicação só é feita por métodos modificadores de acesso, desta forma pode-se prevenir que usuários não autorizados vejam ou modifiquem algum campo protegido da classe;
+          \item \textbf{Manutenção} - facilita a manutenção da classe pois ela pode ser feita de forma isolada;
+          \item \textbf{Reduz acoplamento} - Quanto menor o acoplamento entre classes, maior pode ser a reutilização dessa classe.
+      \end{enumerate}
+  \end{block}
+\end{frame}}
+%------------------------------------------------------------
+\mode<presentation>{
+\section{Operadores de Visibilidade}
+\begin{frame}{Operadores de visibilidade}
+\begin{block}{Público - public}
+    Nível de acesso livre. Indica que o método ou atributo da classe é público, ou seja, pode-se acessar este atributo, ou executar esse método, por qualquer código de programa. Usamos o sinal (+) na notação UML para simbolizar essa visibilidade.
 \end{block}
-
+\begin{block}{Privado - private}
+    Nível mais protegido. Membros declarados como private, só podem ser acessados dentro da classe em que foram declarados. Usamos o sinal (-) na notação UML para simbolizar essa visibilidade.
+\end{block}
 \end{frame}}
-
-%----------------------------------------------------------------------
+%------------------------------------------------------------
 \mode<presentation>{
-\section{Construtor}
-\begin{frame}{Construtor de classe}
-E se houver a necessidade de inicializarmos um objeto com um valores, sem 
-utilizar um método para alterar os valores de atributos?\\
-% \pause
-% Declare um CONSTRUTOR para a classe:
-%  \small{ 
-% \lstinputlisting[linerange={1-11}]{./cod/Time2.java}}
+\begin{frame}{Operadores de visibilidade [2]}
+\begin{block}{Protegido - protected}
+    Nível de acesso intermediário. Serve para que o método ou o atributo seja público dentro do código da própria classe e de qualquer classe que herde daquela onde está o método ou propriedade protected. É privado e não acessível de qualquer outra parte. Usamos o sinal (\#) na notação UML para simbolizar essa visibilidade.
+\end{block}
 \end{frame}}
-%----------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Construtor de classe}
-  Declare um CONSTRUTOR para a classe:
- \small{ 
-\lstinputlisting[linerange={1-11}]{./cod/Time2.java}}
-  \pause
-Utilizando o CONSTRUTOR da classe Time2:
- \small{ 
-\lstinputlisting[linerange={3-3}]{./cod/Time2Test.java}}
-\end{frame}}
-%----------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Construtor de classe}
-  Construtor é o método que instancia um objeto, quando utilizamos \textit{new} 
-String(), estamos utilizando o construtor da classe String.\\
-\vspace{0.5cm}
-\pause
-\begin{itemize}
- \item Construtores possuem o mesmo nome da classe;
- \pause \item É indicado que toda classe possua ao menos um construtor;
- \pause \item O construtor não precisa necessariamente inicializar todos os 
-atributos da classe.
-  \pause \item Uma classe pode ter vários Construtores.
-\end{itemize}
-
-\end{frame}}
-%----------------------------------------------------------------------
-\mode<presentation>{
-\section{Sobrecarga de Construtor}
-\begin{frame}{Construtor de classe}
-  Vejamos como criar vários Construtores em uma classe
- \small{ 
-\lstinputlisting[linerange={13-20}]{./cod/Time2.java}}
-\end{frame}}
-%----------------------------------------------------------------------
-\mode<presentation>{
-\begin{frame}{Construtor de classe}
-  Vejamos como \underline{utilizar} vários Construtores em uma classe
- \small{ 
-\lstinputlisting[linerange={3-6}]{./cod/Time2Test.java}}
-\end{frame}}
-%----------------------------------------------------------------------
+%--------------------------------------------------------
 \mode<presentation>{
 \section{Get e Set}
 \begin{frame}{Manipulando atributos}
-  E se precisarmos alterar apenas o valor do atributo hora, sem editar os 
-outros valores?\\
+
+        E se precisarmos alterar apenas o valor de um atributo \textbf{privado}?\\
+
+  Para manipular valores de atributos, a classe deve possuir métodos get e set para cada um de seus atributos.\\
 \pause
- \small{ 
-\lstinputlisting[linerange={22-29}]{./cod/Time2.java}}
-  Para manipular valores de atributos, a classe deve possuir métodos get e set 
-para cada um de seus atributos.\\
-\pause
-\textcolor{red}{Podemos receber valores de hora sem validar?}\\
-Desenvolva os métodos get e set da classe Time2, com validação.
+\textcolor{red}{Podemos receber valores sem validar?}\\ Vamos desenvolver os métodos get e set da classe Conta, como atividade extra, faça a validação.
+  
+
+\end{frame}}
+%--------------------------------------------------------
+\mode<presentation>{
+\begin{frame}{Manipulando atributos}
+
+        \begin{center}
+        \includegraphics[height=0.8\paperheight]{fig/aula7/getSet_aula7.png} \\
+        \end{center}
+  
+
 \end{frame}}
 
-% %--------------------------------------------------------
-\section{Classes}
+%--------------------------------------------------------
 \mode<presentation>{
-\begin{frame}{Conta.java}
-  E se quisermos colocar um valor padrão (\textit{default}) para nossos 
-atributos?\\
+\begin{frame}{Voltando ao banco...}
+  Também é possível associar um valor padrão (\textit{default}) para nossos atributos.\\
 \begin{center}
   \includegraphics[height=0.3\paperheight]{fig/aula9/conta2.png} \\
  \end{center}
- \pause Nesse caso os atributos de um objeto são populados com os valores 
-definidos na declaração dos atributos, e ao criarmos um objeto ele já esta 
-populado.
+Nesse caso os atributos de um objeto são populados com os valores definidos na declaração dos atributos, e ao criarmos um objeto ele já esta populado.
 \end{frame}}
 %----------------------------------------------------------------------------
 \mode<presentation>{
@@ -310,7 +224,7 @@ populado.
    \end{column}
 
   \end{columns}
-
+Objetos que possuem referência a outras classes, são chamados de objetos compostos.
 \end{frame}}
 %----------------------------------------------------------------------------
 \mode<presentation>{
@@ -319,11 +233,9 @@ populado.
       \includegraphics[height=0.35\paperheight]{fig/aula9/contaClienteMain.png} \\
   \end{center}
   \pause
-  Aqui, simplesmente houve uma atribuição. \\ \pause
-  O valor da variável c é copiado para  o atributo titular do objeto ao qual 
-minhaConta se refere. \\ \pause
-Em outras palavras, minhaConta agora tem uma referência ao mesmo Cliente que c 
-se refere, e pode ser acessado através de minhaConta.titular.  
+  Aqui, simplesmente houve uma atribuição. \\ 
+  O valor da variável c é copiado para  o atributo titular do objeto ao qual minhaConta se refere. \\ 
+Em outras palavras, minhaConta agora tem uma referência ao mesmo Cliente que c se refere, e pode ser acessado através de minhaConta.titular.  
 \end{frame}}
 %----------------------------------------------------------------------------
 \mode<presentation>{

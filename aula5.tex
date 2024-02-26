@@ -36,7 +36,7 @@
 % Configurando layout para mostrar codigos C++
 \usepackage{listings}
 \lstset{
-  language=HTML,
+  language=Java,
   basicstyle=\ttfamily\small, 
   keywordstyle=\color{blue}, 
   stringstyle=\color{red}, 
@@ -115,8 +115,8 @@
 
 
 %%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
-\title{Análise Orientada a objetos}
-\subtitle{Aula 4}
+\title{Desenvolvimento de Software}
+\subtitle{Aula 5}
 \author{Prof. Me. Juliana Costa-Silva}
 \begin{document}
 %%%%%%%%%%%%%%%%%% TITLE SLIDE %%%%%%%%%%%%%%%%%%
@@ -137,10 +137,8 @@
 \section{static}
 \mode<presentation>{\begin{frame}{Static}
   \begin{itemize}
-    \item Atributos e métodos estáticos são compartilhados por todos os objetos 
-criados a partir daquela classe.
-   \pause \item Existe apenas uma única cópia do método e/ ou atributo que esta 
-associada com a classe e não com alguma instância criada da classe (objetos).
+    \item Atributos e métodos estáticos são compartilhados por todos os objetos criados a partir daquela classe.
+   \item Existe apenas uma única cópia do método e/ ou atributo que esta associada com a classe e não com alguma instância criada da classe (objetos).
   \end{itemize}
   \begin{columns}
     \begin{column}{0.4\textwidth}
@@ -161,10 +159,8 @@ associada com a classe e não com alguma instância criada da classe (objetos).
 \mode<presentation>{\begin{frame}{static}
   Restrições:
     \begin{itemize}
-      \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode acessar 
-variáveis de instância;
-      \pause \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode se 
-referenciar a métodos de instância.
+      \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode acessar variáveis de instância;
+      \pause \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode se referenciar a métodos de instância.
     \end{itemize}
 \end{frame}}
 %----------------------------------------------------------------------------
@@ -186,30 +182,18 @@ referenciar a métodos de instância.
 \section{Atividade}
 \mode<presentation>{\begin{frame}{Atividade}
   \begin{enumerate}
-   \item Modele um funcionário. Ele deve ter o nome do funcionário, o 
-departamento onde trabalha, seu salário (double), a data de entrada no banco 
-(String), seu RG (String) e um valor booleano que indique se o funcionário está 
-na empresa no momento ou se já foi embora. Você deve criar alguns métodos de  
-acordo com sua necessidade. 
-    \item Além deles, crie um método bonifica que aumenta o salário do 
-funcionário de acordo com o parâmetro passado como argumento. Crie, também, um 
-método demite , que não recebe parâmetro algum, só modifica o valor booleano 
-indicando que o funcionário não trabalha mais aqui.
+   \item Modele um funcionário. Ele deve ter o nome do funcionário, o departamento onde trabalha, seu salário (double), a data de entrada no banco (String), seu RG (String) e um valor booleano que indique se o funcionário está na empresa no momento ou se já foi embora. Você deve criar alguns métodos de  acordo com sua necessidade. 
+    \item Além deles, crie um método bonifica que aumenta o salário do funcionário de acordo com o parâmetro passado como argumento. Crie, também, um método demite , que não recebe parâmetro algum, só modifica o valor booleano indicando que o funcionário não trabalha mais aqui.
   \end{enumerate}
 \end{frame}}
 %--------------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividade}
   \begin{enumerate}
-   \item Transforme o modelo em uma classe Java. Teste-a, usando uma outra 
-classe que tenha o main. Você deve criar a classe do funcionário chamada  
-Funcionario , e a classe de teste você pode nomear como quiser. A de teste deve 
-possuir o método main. Um esboço das classes:
+   \item Transforme o modelo em uma classe Java. Teste-a, usando uma outra classe que tenha o main. Você deve criar a classe do funcionário chamada Funcionario, e a classe de teste você pode nomear como quiser. A de teste deve possuir o método main. Um esboço das classes:
   \end{enumerate}
   \includegraphics[height=0.3\paperheight]{classes_AEP1.png} \\
 \end{frame}}
-%-----------------------------------------------------------------------
-
-%----------------------------------------------------------------------
+%-------------------------------------------------------------
 \mode<presentation>{\section{Atividade}
 \begin{frame}{Atividade de Aula}
   \begin{enumerate}
@@ -232,7 +216,7 @@ possuir o método main. Um esboço das classes:
 	\includegraphics[height=0.6\paperheight]{fig/aula1/deitel2017java.png} 
 	\end{column}
 	\end{columns}
-	%\textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
+\textcolor{red}{DISPONÍVEL NA BIBLIOTECA FÍSICA E VIRTUAL}
 \end{frame}}
 
  %----------------------------------------------------------------------------

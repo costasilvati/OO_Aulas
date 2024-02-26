@@ -115,7 +115,7 @@
 
 
 %%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
-\title{Análise Orientada a objetos}
+\title{Desenvolvimento de Software}
 \subtitle{Aula 7}
 \author{Prof. Me. Juliana Costa-Silva}
 
@@ -132,8 +132,8 @@
  \mode<presentation>{ 
  \begin{frame}{Na última aula...}
  \begin{itemize}
-  \item Objetos;
-  \item Classes;
+  \item Construtores;
+  \item sobrescrita de construtores;
   \end{itemize}
 \end{frame}
 }
@@ -145,14 +145,12 @@
 \end{frame}
 }
 %----------------------------------------------------------------------------
-\section{static}
+\section{Herança}
  \mode<presentation>{ 
-\begin{frame}{Static}
+\begin{frame}{Herança}
   \begin{itemize}
-    \item Atributos e métodos estáticos são compartilhados por todos os objetos 
-criados a partir daquela classe.
-    \item Existe apenas uma única cópia do método e/ ou atributo que esta 
-associada com a classe e não com alguma instância criada da classe (objetos).
+    \item Atributos e métodos estáticos são compartilhados por todos os objetos criados a partir daquela classe.
+    \item Existe apenas uma única cópia do método e/ ou atributo que esta associada com a classe e não com alguma instância criada da classe (objetos).
   \end{itemize}
   \begin{columns}
     \begin{column}{0.4\textwidth}
@@ -170,46 +168,25 @@ associada com a classe e não com alguma instância criada da classe (objetos).
 
 \end{frame}
 }
-%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------p
  \mode<presentation>{ 
-\begin{frame}{static}
+\begin{frame}{Propriedades static}
   Restrições:
     \begin{itemize}
-      \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode acessar 
-variáveis de instância;
-       \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode se 
-referenciar a métodos de instância.
+      \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode acessar variáveis de instância;
+       \item um método estático, \textbf{\textcolor{blue}{NÃO}} pode se referenciar a métodos de instância.
     \end{itemize}
 \end{frame}
 }
-%----------------------------------------------------------------------------
- \mode<presentation>{ 
-\begin{frame}{static}
-
-  \small{ 
-\lstinputlisting[linerange={3-8}]{./cod/Estatico.java}
-  }
-\end{frame}
-}
-%----------------------------------------------------------------------------
- \mode<presentation>{ 
-\begin{frame}{static}
-   \small{\lstinputlisting[linerange={3-15}]{./cod/TestaEstatico.java}}
-\end{frame}
-}
-%--------------------------------------------e--------------------------------
 %----------------------------------------------------------------------
 \section{Atividade}
  \mode<presentation>{ 
 \begin{frame}{Atividade}
   \begin{enumerate}
-   \item Modele um funcionário. Ele deve ter o nome do funcionário, o 
-departamento onde trabalha, seu salário (double), a data de entrada no banco 
-(String), seu RG (String) e um valor booleano que indique se o funcionário está na empresa no momento ou se já foi embora. Você deve criar alguns métodos de  acordo com sua necessidade. 
-    \item Além deles, crie um método bonifica que aumenta o salário do 
-funcionário de acordo com o parâmetro passado como argumento. Crie, também, um 
-método demite , que não recebe parâmetro algum, só modifica o valor booleano 
-indicando que o funcionário não trabalha mais aqui.
+   \item Seguindo o sistema bancário;
+   \item Modele um funcionário. Ele deve ter o nome do funcionário, o departamento onde trabalha, seu salário (double), a data de entrada no banco (String), seu RG (String) e um valor booleano que indique se o funcionário está na empresa no momento ou se já foi embora. 
+   \item Você deve criar alguns métodos de  acordo com sua necessidade. 
+    \item Além deles, crie um método bonifica que aumenta o salário do funcionário de acordo com o parâmetro passado como argumento. Crie, também, um método demite , que não recebe parâmetro algum, só modifica o valor booleano indicando que o funcionário não trabalha mais aqui.
   \end{enumerate}
 \end{frame}
 }
@@ -217,10 +194,7 @@ indicando que o funcionário não trabalha mais aqui.
  \mode<presentation>{ 
 \begin{frame}{Atividade}
   \begin{enumerate}
-   \item Transforme o modelo em uma classe Java. Teste-a, usando uma outra 
-classe que tenha o main. Você deve criar a classe do funcionário chamada  
-Funcionario , e a classe de teste você pode nomear como quiser. A de teste deve 
-possuir o método main. Um esboço das classes:
+   \item Transforme o modelo em uma classe Java. Teste-a, usando uma outra classe que tenha o main. Você deve criar a classe do funcionário chamada  Funcionario , e a classe de teste você pode nomear como quiser. A de teste deve possuir o método main. Um esboço das classes:
   \end{enumerate}
   \includegraphics[height=0.3\paperheight]{classes_AEP1.png} \\
 \end{frame}
@@ -272,11 +246,10 @@ Anote as explicações, como comentários no código
 %----------------------------------------------------------------------------
  \mode<presentation>{ 
 \begin{frame}{Testando...}
-Crie uma classe Time1Test e declare um método main() nessa classe. E faça 
-testes!
+Crie uma classe Time1Test e declare um método main() nessa classe \footnote{Não se esqueça de fechar as chaves da classe e da main()!!}. E faça testes!
  \small{ 
 \lstinputlisting[linerange={2-9}]{./cod/Time1Test.java}}
-Não se esqueça de fechar as chaves da classe e da main()!!
+
 \end{frame}
 }
 %----------------------------------------------------------------------------
@@ -295,13 +268,11 @@ Altere o valor dos atributos na main() da classe TimeTest.java
  \small{ 
 \lstinputlisting[linerange={19-19}]{./cod/Time1Test.java}}
 
-\textcolor{red}{Exception in thread ``main'' java.lang.RuntimeException: 
-  Uncompilable source code \- hora has private access in Time1Test}\\
+\textcolor{red}{Exception in thread ``main'' java.lang.RuntimeException: Uncompilable source code \- hora has private access in Time1Test}\\
 
 \vspace{0.3cm}
 \begin{block}{Como editar os valores?}
- Os valores serão editados, somente utilizando o construtor da classe, ou com a 
-chamada dos métodos que fazem a  edição, nesse caso método \underline{setTime}.
+ Os valores serão editados, somente utilizando o construtor da classe, ou com a chamada dos métodos que fazem a  edição, nesse caso método \underline{setTime}.
 \\
  Isso se deve ao operador de visibilidade \textcolor{purple}{private}.
 \end{block}
@@ -311,8 +282,7 @@ chamada dos métodos que fazem a  edição, nesse caso método \underline{setTim
 \section{Construtor}
  \mode<presentation>{ 
 \begin{frame}{Construtor de classe}
-E se houver a necessidade de inicializarmos um objeto com um valores, sem 
-utilizar um método para alterar os valores de atributos?\\
+E se houver a necessidade de inicializarmos um objeto com um valores, sem utilizar um método para alterar os valores de atributos?\\
 % 
 % Declare um CONSTRUTOR para a classe:
 %  \small{ 
@@ -334,15 +304,13 @@ Utilizando o CONSTRUTOR da classe Time2:
 %----------------------------------------------------------------------
  \mode<presentation>{ 
 \begin{frame}{Construtor de classe}
-  Construtor é o método que instancia um objeto, quando utilizamos \textit{new} 
-String(), estamos utilizando o construtor da classe String.\\
+  Construtor é o método que instancia um objeto, quando utilizamos \textit{new} String(), estamos utilizando o construtor da classe String.\\
 \vspace{0.5cm}
 
 \begin{itemize}
  \item Construtores possuem o mesmo nome da classe;
   \item É indicado que toda classe possua ao menos um construtor;
-  \item O construtor não precisa necessariamente inicializar todos os 
-atributos da classe.
+  \item O construtor não precisa necessariamente inicializar todos os atributos da classe.
    \item Uma classe pode ter vários Construtores.
 \end{itemize}
 
@@ -369,16 +337,13 @@ atributos da classe.
 \section{Get e Set}
  \mode<presentation>{ 
 \begin{frame}{Manipulando atributos}
-  E se precisarmos alterar apenas o valor do atributo hora, sem editar os 
-outros valores?\\
+  E se precisarmos alterar apenas o valor do atributo hora, sem editar os outros valores?\\
 
  \small{ 
 \lstinputlisting[linerange={22-29}]{./cod/Time2.java}}
-  Para manipular valores de atributos, a classe deve possuir métodos get e set 
-para cada um de seus atributos.\\
+  Para manipular valores de atributos, a classe deve possuir métodos get e set para cada um de seus atributos.\\
 
-\textcolor{red}{Podemos receber valores de hora sem validar?}\\
-Desenvolva os métodos get e set da classe Time2, com validação.
+\textcolor{red}{Podemos receber valores de hora sem validar?}\\Desenvolva os métodos get e set da classe Time2, com validação.
 \end{frame}
 }
 %----------------------------------------------------------------------
@@ -386,15 +351,10 @@ Desenvolva os métodos get e set da classe Time2, com validação.
  \mode<presentation>{ 
  \begin{frame}{Atividade}
   \begin{enumerate}
-   \item Como ficam os métodos setTime, toString e toUniversalString na classe 
-Time2? Implemente-os.
+   \item Como ficam os métodos setTime, toString e toUniversalString na classe Time2? Implemente-os.
     \item Teste os métodos.
-    \item Na main, utilize dois objetos Time2, guarde dois horários recebidos 
-pelo usuário e retorne a diferença do valor de horas e minutos entre os dois 
-objetos.
-    \item Crie um método na classe Time2 que receba um valor inteiro e uma 
-String. O método deve adicionar o valor inteiro recebido por parâmetro ao 
-atributo recebido como String ``hora'', ``minuto'' ou ``segundo''.
+    \item Na main, utilize dois objetos Time2, guarde dois horários recebidos pelo usuário e retorne a diferença do valor de horas e minutos entre os dois objetos.
+    \item Crie um método na classe Time2 que receba um valor inteiro e uma String. O método deve adicionar o valor inteiro recebido por parâmetro ao atributo recebido como String ``hora'', ``minuto'' ou ``segundo''.
   \end{enumerate}
 \end{frame}
 }
@@ -413,14 +373,11 @@ atributo recebido como String ``hora'', ``minuto'' ou ``segundo''.
 \section{Classes}
  \mode<presentation>{ 
 \begin{frame}{Conta.java}
-  E se quisermos colocar um valor padrão (\textit{default}) para nossos 
-atributos?\\
+  E se quisermos colocar um valor padrão (\textit{default}) para nossos atributos?\\
 \begin{center}
   \includegraphics[height=0.3\paperheight]{conta2.png} \\
  \end{center}
-  Nesse caso os atributos de um objeto são populados com os valores 
-definidos na declaração dos atributos, e ao criarmos um objeto ele já esta 
-populado.
+  Nesse caso os atributos de um objeto são populados com os valores definidos na declaração dos atributos, e ao criarmos um objeto ele já esta populado.
 \end{frame}
 }
 %----------------------------------------------------------------------------
@@ -452,10 +409,8 @@ populado.
   \end{center}
   
   Aqui, simplesmente houve uma atribuição. \\ 
-  O valor da variável c é copiado para  o atributo titular do objeto ao qual 
-minhaConta se refere. \\ 
-Em outras palavras, minhaConta agora tem uma referência ao mesmo Cliente que c 
-se refere, e pode ser acessado através de minhaConta.titular.  
+  O valor da variável c é copiado para  o atributo titular do objeto ao qual minhaConta se refere. \\ 
+  Em outras palavras, minhaConta agora tem uma referência ao mesmo Cliente que c se refere, e pode ser acessado através de minhaConta.titular.  
 \end{frame}
 }
 %----------------------------------------------------------------------------
@@ -533,54 +488,7 @@ funcionários uma bonificação de 10\%.
 \textbf{Teste a bonificação de Gerente e Funcionário.}
 \end{frame}
 }
-%----------------------------------------------------------------------
- \mode<presentation>{
-\begin{frame}{Reescrita de métodos}
- Na classe Gerente.java reescreva o método getBonificacao().
-  \small{ 
-\lstinputlisting[linerange={15-16}]{./cod/Banco/Gerente.java}}
-Execute o teste novamente...
-\end{frame}
-}
-%----------------------------------------------------------------------
-\section{Atividade}
- \mode<presentation>{
-\begin{frame}{Atividade}
-  \begin{enumerate}
-   \item Crie uma classe Conta, que possua um saldo, e os métodos para pegar 
-saldo, depositar, e sacar.
-    \item Crie os métodos get e set para cada atributo.
-    \item Adicione um método na classe Conta, que atualiza o saldo da conta de 
-acordo com uma taxa percentual fornecida.
-    \item Crie duas subclasses da classe Conta : ContaCorrente e ContaPoupanca. Ambas terão o método atualiza reescrito: A ContaCorrente deve atualizar-se com o dobro da taxa e a ContaPoupanca deve atualizar-se com o triplo da taxa.
-    \item Além disso, a ContaCorrente deve reescrever o método deposita, afim de retirar uma taxa bancária de dez centavos de cada depósito.
-    \item Crie uma classe com método main e instancie essas classes, atualize-as e veja o resultado.
-  \end{enumerate}
-\end{frame}
-}
-%----------------------------------------------------------------------
- \mode<presentation>{
-\begin{frame}{Atividade - PARCIAL}
-\small
-  \begin{itemize}
-   \item \textbf{1.} Faça com que sua classe Pessoa possa receber, opcionalmente, o nome do titular durante a criação do objeto. Envie o código Java como resposta.
-   \item \textbf{2.} Atualize a suas classes que acessam e modificam atributos de uma Pessoa para utilizar os getters e setters recém-criados. Indique o que foi alterado, em qual arquivo e por que.
-   \item \textbf{3.} O que é necessário fazer para garantirmos que os atributos de uma classe não sejam acessados de forma direta em outra classe a qual não seja a própria classe? Descreva a sua solução e Justifique.
-   \item \textbf{4.} Imagine que tenhamos a classe PessoaFisica a qual tem um CPF como atributo. Como garantir que alguma pessoa física tenha CPF inválido e tampouco seja criada uma PessoaFisica sem CPF inicial? (Suponha que já exista um algoritmo de validação de CPF: este deve passar por um método  valida(String x)....)
-   \end{itemize}
-\end{frame}
-}
 
-%----------------------------------------------------------------------
- \mode<presentation>{
-\begin{frame}{Atividade - PARCIAL}
-\small
-  \begin{itemize}
-   \item \textbf{5.} Após deixar os atributos da classe Pessoa (atributos: cpf, nome, nascimento) com acesso restrito (privado), tente criar uma Pessoa na classe TestaPessoa dentro do main e modificar ou ler os atributos da Pessoa criada. O que acontece? Crie apenas os getters e setters necessários na sua classe Pessoa. Pense sempre se é preciso criar cada um deles. *Não copie e cole! Aproveite para praticar a sintaxe.
-   \item \textbf{6.} Adicione um atributo, na classe Pessoa de tipo int, que se chama identificador. Este deve ter um valor único para cada instância do tipo Pessoa. A primeira Pessoa instanciada tem identificador 1, a segunda, 2, e assim por diante. Você deve utilizar os recursos aprendidos aqui na resolução desse problema.
-   \end{itemize}
-\end{frame}
-}
 % %--------------------------------------------------------
 % \mode<presentation>{ 
 % \begin{frame}{Atividade - AEP I}

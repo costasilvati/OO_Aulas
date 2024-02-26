@@ -1,9 +1,4 @@
-package noExtend;
-
-public class Gerente {
-    String nome;
-    String cpf;
-    double salario;
+public class Gerente extends Funcionario{
     int senha;
 
     public boolean autentica(int senha) {

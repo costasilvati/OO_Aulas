@@ -115,7 +115,7 @@
 
 
 %%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
-\title{Análise Orientada a objetos}
+\title{Desenvolvimento de Software}
 \subtitle{Aula 3}
 \author{Prof. Me. Juliana Costa-Silva}
 \begin{document}
@@ -345,7 +345,7 @@ manipulação de tipos primitivos inteiros (byte, short, int e long).
 \end{frame}}
 %----------------------------------------------------------------------------
 \section{Arrays}
-\mode<presentation>{\begin{frame}{Array}
+\mode<presentation>{\begin{frame}{Array - Definição}
  \begin{center} 
    \includegraphics[height=0.4\paperheight]{array.png} \\
    \includegraphics[height=0.2\paperheight]{array_detalhes.png} \\
@@ -353,7 +353,7 @@ manipulação de tipos primitivos inteiros (byte, short, int e long).
 
 \end{frame}}
 %----------------------------------------------------------------------
-\mode<presentation>{\begin{frame}{Array}
+\mode<presentation>{\begin{frame}{Array - Obrigatoriedades}
   Para se utilizar um Array é necessário realizar os seguintes passos:
   \begin{itemize}
    \item Declarar a variável do tipo Array
@@ -417,7 +417,7 @@ utilizando-se o índice de acesso a posição.
  
 \end{frame}}
 %----------------------------------------------------------------------
-\mode<presentation>{\begin{frame}{Array}
+\mode<presentation>{\begin{frame}{Array - tamanho}
   Utilizando a propriedade de tamanho do Array
 \begin{center} 
    \small{
@@ -428,7 +428,7 @@ utilizando-se o índice de acesso a posição.
 de um array.
 \end{frame}}
 
-%----------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 \section{Arrays Multidimensionais}
 \mode<presentation>{\begin{frame}{Arrays Multidimensionais}
   É possível em Java criar vetores com mais de uma dimensão (arrays 
@@ -445,7 +445,7 @@ cada dimensão definida.
   \end{itemize}
 \end{frame}}
 %----------------------------------------------------------------------------
-\mode<presentation>{\begin{frame}{Arrays}{Multidimensionais}
+\mode<presentation>{\begin{frame}{Arrays Multidimensionais}
 Para os Arrays multidimensionais são válidas as mesmas regras dos Arrays 
 unidimensionais
 \begin{itemize}
@@ -455,7 +455,7 @@ unidimensionais
 \end{itemize}
 
 \end{frame}}
-%--------------------------------------------e--------------------------------
+%-----------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Declaração}{Exemplos}
  \begin{center} 
   Declaração:\\ 
@@ -468,7 +468,7 @@ unidimensionais
    \small{\lstinputlisting[linerange={7-8}]{./cod/Aula6.java}}
  \end{center}
 \end{frame}}
-%--------------------------------------------e--------------------------------
+%-------------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Inicialização}{Exemplos}
  \begin{center} 
   Inicialização:\\ 
@@ -479,19 +479,17 @@ unidimensionais
 \small{\lstinputlisting[linerange={13-18}]{./cod/Aula6.java}}
  \end{center}
 \end{frame}}
-%----------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 \section{Propriedades}
 \mode<presentation>{\begin{frame}{Propriedades}{Array Multidimensional}
   Todo Array multidimensional também possui uma propriedade chamada
 \textcolor{red}{length} do tipo \textbf{int}, para cada uma das dimensões que
 possui.\\
-
 \textbf{Exemplo:}\\
 \begin{center} 
    \includegraphics[height=0.35\paperheight]{length_matriz.png} \\
  \end{center}
 \end{frame}}
-
 %---------------------------------------------------------------------
 \section{Manipulação de Strings}
 \mode<presentation>{\begin{frame}{Strings}
@@ -504,9 +502,7 @@ precisa ser importada explicitamente.
    \item A classe String integra a API básica do Java, por ser uma classe 
 de uso fundamental na criação de programas.
  \end{itemize}
-
 \end{frame}}
-
 %---------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Strings}
  \begin{itemize}
@@ -556,29 +552,22 @@ igualdade (==), pois, as mesmas só terão o mesmo valor caso ambas tenham sido
   Métodos que retiram partes da String\\
   Veja o exemplo em ExemploString3.java\\
 \end{frame}}
-
 %----------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividades}
-  \textbf{1.} Faça um programa em Java que mostre a tabuada de um número 
-escolhido pelo usuário (entre 1 e 10). Repita o exercício cm os 3 laços.\\
+  \textbf{1.} Faça um programa em Java que mostre a tabuada de um número escolhido pelo usuário (entre 1 e 10) \textit{Obrigatório o uso de laço de repetição}. Repita o exercício cm os 3 laços.\\
 \vspace{0.5cm}
-\textbf{2.} Faça um programa em Java que mostre a tabuada de 1 a 10 em uma 
-mesma tela. De 1 a 5 no primeiro bloco e do 6 ao 10 no segundo.
+\textbf{2.} Faça um programa em Java que mostre a tabuada de 1 a 10 em uma mesma tela. De 1 a 5 no primeiro bloco e do 6 ao 10 no segundo. \textit{Obrigatório o uso de laço de repetição}.
 \end{frame}}
 %----------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividades}
 
-  \textbf{3.} Faça um programa em Java que calcule o fatorial de um número 
-pré-definido.\\
+  \textbf{3.} Faça um programa em Java que calcule o fatorial de um número pré-definido. \textit{Obrigatório o uso de laço de repetição}.\\
 \vspace{0.5cm}
-
-
 \end{frame}}
 %----------------------------------------------------------------------
 \section{Atividades}
 \mode<presentation>{\begin{frame}{Atividades}
-  \textbf{4.} Escreva uma aplicação capaz de receber 10 números (tipo ponto 
-flutuante), calcule e imprima: 
+  \textbf{4.} Escreva uma aplicação capaz de receber 10 números (tipo ponto flutuante), calcule e imprima: 
 \begin{itemize}
  \item Os números digitados; 
  \item A soma dos números; 
@@ -586,6 +575,7 @@ flutuante), calcule e imprima:
  \item O maior número; 
  \item O menor número.
 \end{itemize}
+\textit{Obrigatório o uso de laço de repetição array}.
 \end{frame}}
 %----------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividades}
@@ -596,36 +586,54 @@ flutuante), calcule e imprima:
    \includegraphics[height=0.2\paperheight]{fig/aula3/quadrado_magico.png} \\
  \end{center}
  Faça um código Java que receba uma dimensão N de uma matriz $A_{nxn}$, seguido dos respectivos valores da matriz (preenchendo a matriz da linha 0 até N, da esquerda para a direta: \textit{coluna 0 até N}), verificar se a matriz é um quadrado mágico (Imprima: “quadrado magico” caso seja e “quadrado NÃO magico” caso não seja).
+ \textit{Obrigatório o uso de laço de repetição e arrays}
 \end{frame}}
 %-----------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividades}
-  \textbf{8.} Escreva uma aplicação que receba do usuário uma frase no seguinte 
-formato N-N-N-...-N-N-N (representando por números inteiros separados por 
-hífen), extraia esses números desta frase e crie e alimente um vetor de tamanho 
-exato a quantidade de números. De posse desses números, coloque-os em ordem 
-decrescente no vetor.
+  \textbf{8.} Escreva uma aplicação que receba do usuário uma frase no seguinte formato N-N-N-...-N-N-N (representando por números inteiros separados por hífen), extraia esses números desta frase e crie e alimente um vetor de tamanho exato a quantidade de números. De posse desses números, coloque-os em ordem decrescente no vetor.
 \end{frame}}
 
 %----------------------------------------------------------------------
 \mode<presentation>{\begin{frame}{Atividades}
   \textbf{9.} Faça uma aplicação que receba uma frase e retorne o texto invertido.\\
-\textbf{10.} Faça uma aplicação que receba o nome completo do usuário, e depois 
-troque o seu último sobrenome por Silva. Mostre o resultado na tela.
+\textbf{10.} Faça uma aplicação que receba o nome completo do usuário, e depois troque o seu último sobrenome por Silva. Mostre o resultado na tela.
 \end{frame}}
 %------------------------------
 \section{Leitura recomendada}
-\mode<presentation>{\begin{frame}{Leitura complementar}
- Para mais informações sobre JAVA, leia:\\
-	\begin{columns}
-	\begin{column}{0.5\textwidth}
-	 Capítulo 3 a 7:
-	 \cite{deitel2017java}
-	\end{column}
-	\begin{column}{0.4\textwidth}
-	\includegraphics[height=0.6\paperheight]{fig/aula1/deitel2017java.png} 
-	\end{column}
-	\end{columns}
-	%\textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
+\mode<presentation>{
+\begin{frame}{Leitura complementar [1]}
+ Para mais informações sobre Java, leia:\\
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+     Capítulo 3 a 7:
+	   Livro: Java Como programar (Deitel e Deitel, 2017) \\
+    \cite{deitel2017java}
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.5\paperheight]{fig/aula1/deitel2017java.png} 
+ \end{center}
+   \end{column}
+ \end{columns}
+ \textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
+\end{frame}}
+%-----------------------------------------------------
+\mode<presentation>{
+\begin{frame}{Leitura complementar [2]}
+ Para mais informações sobre Java, leia:\\
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+     Capítulo 4 e 5:
+	Livro: Core Java (Horstman, 2013) \\
+        \cite{horstmann2013core}
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.5\paperheight]{fig/horstman2013.png} \\
+ \end{center}
+   \end{column}
+ \end{columns}
+ \textcolor{red}{DISPONÍVEL NA BIBLIOTECA VIRTUAL}
 \end{frame}}
 
  %----------------------------------------------------------------------------

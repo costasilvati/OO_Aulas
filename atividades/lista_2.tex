@@ -1,0 +1,120 @@
+%%% Template para anotações de aula
+%%% Feito por Daniel Campos com base no template de Willian Chamma que fez com base no template de Mikhail Klassen
+
+
+
+\documentclass[12pt,a4paper, brazil]{article}
+
+%%%%%%% INFORMAÇÕES DO CABEÇALHO
+\newcommand{\workingDate}{\textsc{\selectlanguage{portuguese}\today}}
+\newcommand{\userName}{DesSoftware}
+\newcommand{\institution}{Universidade Positivo - Londrina}
+\usepackage{researchdiary_png}
+
+
+
+
+\begin{document}
+
+\begin{center}
+{\textbf {\huge Atividade Prática 2}}\\[5mm]
+{\large Desenvolvimento de Software 2023-1} \\
+{\large Prof. Me. Juliana Costa Silva} \\
+\today\\[5mm] %% se quiser colocar data
+\end{center}
+% TEMPLATE DE ATIVIDADE: https://www.overleaf.com/latex/templates/template-para-relatorio-tecnico-memorial-descritivo-utfpr/ywygvmqcqysy
+
+\section*{Orientações}
+
+\begin{itemize}
+  \item Desenvolva todas as atividades em linguagem Java, outras linguagens não serão aceitas na entrega;
+  \item É ideal compreender o código desenvolvido, entende o problema e, planeje a solução antes de implementar;
+  \item \textbf{Esta lista terá uma das atividades sorteada para resolução em sala de aula, manuscrita (no papel)}. Esta atividade será realizada unicamente no dia 14\/04\/2023 as 19:00hs com 20 minutos para entrega e sem consulta;
+  \item Será avaliada apenas a atividade entregue no papel, com enfase na lógica de programação e uso correto dos conceitos de Orientação a Objetos, \textit{pequenos erros de sintaxe} serão desconsiderados;
+  \item A lista de atividades deve ser resolvida individualmente. Os alunos podem discutir as soluções e eventualmente ajudar a resolução de um colega, porém a cópia, integral ou parcial de código não é permitida. Desse modo alunos com códigos iguais ou com alta similaridade terão suas atividades ANULADAS, recebendo 0,0 como nota nesta atividade.
+\end{itemize}
+
+
+\vspace{0.5cm}
+
+
+\section{Imposto a pagar}
+\par
+Um trabalhador autônomo deseja controlar suas finanças, comprou um microcomputador para controlar o rendimento diário de seu trabalho. 
+\begin{itemize}
+    \item Toda vez que ele vende um valor maior que o estabelecido pelo regulamento de MEI do estado onde vive (500,00 R\$ dia) deve pagar um multa de R\$ 0,10 a cada  Real excedente.
+    \item Este trabalhador precisa que você faça um programa em Java que leia o valor de todas as vendas do mês e verifique se há excesso (vendeu mais de 500,00 por dia). 
+    \item Se houver excesso, gravar na variável E (Excesso) e na variável M o valor da multa que o Trabalhador deverá pagar. 
+    \item Caso contrário mostrar tais variáveis com o conteúdo ZERO.
+\end{itemize} 
+Desenvolva uma aplicação Java Orientada a Objetos e as classes necessárias para resolver o problema.\\
+O sistema deve conter um menu com no mínimo as seguintes opções\\
+1 - cadastro de vendas\\
+2 - consulta de imposto a pagar no mês (com base no mês e no ano das vendas).\\
+0 - Sair.
+ \dotfill
+
+ \section{Cobrança}
+
+Uma empresa de vendas precisa implementar a rotina de cobrança com a seguinte regra:
+\begin{itemize}
+    \item Os boletos atrasados devem receber uma multa de 5\% ao constar em atraso;
+    \item O valor do boleto deve ser recalculado a cada dia com juros de 1\% por dia de atraso (juros sobre juros);
+    \item Desenvolva um programa em Java, Orientado a Objetos que dado o valor original do boleto, e os dias de atraso calcule o valor total a ser pago;
+\end{itemize}
+\textcolor{gray}{Exemplo: Um boleto no valor de R\$ 259,90 com 2 dias de atraso deve ser recalculado em R\$ 278,38 }
+
+ \dotfill
+ 
+\section{Avisos}
+\par
+A empresa de saneamento de uma cidade que controla o índice de poluição da água e mantém 3 grupos de indústrias que são altamente poluentes para o meio ambiente.
+    \begin{itemize}
+        \item O índice de poluição aceitável varia de 0,06 até 0,16. 
+        \item Se o índice sobe para 0,25 as indústrias do 1º grupo são intimadas a reduzirem em 50\% suas atividades;
+        \item Se o índice crescer para 0,4 as industrias do 1º e 2º grupo são intimadas a suspenderem suas atividades.
+        \item Se o índice atingir 0,5 todos os grupos devem ser notificados a paralisarem suas atividades. 
+        \item Desenvolva um programa em Java Orientado a objetos, que leia o índice de poluição medido e emita a notificação adequada aos diferentes grupos de empresas.
+    \end{itemize}
+
+ \dotfill
+
+\section{Pesquisa}
+\par
+Foi feita uma pesquisa entre os habitantes de uma cidade. Foram coletados os dados de idade, gênero (M/F) e renda. Faça uma aplicação em Java Orientada a Objetos  contenha um menu onde seja possível registrar, os dados de cada habitante e, ainda consultar as seguintes informações:
+  \begin{enumerate}
+      \item A média de salário do grupo;
+      \item Maior e menor idade do grupo;
+      \item Quantidade de habitantes do gênero masculino com salário até R\$ 1000,00;
+      \item Quantidade de habitantes do gênero feminino;
+  \end{enumerate}
+
+ \dotfill
+%-------------------------------------------------------------------
+\section{Pessoa}
+\par
+Desenvolva uma classe Pessoa possa, opcionalmente, ser instanciada com o CPF ou a idade da Pessoa sendo informada por parâmetro. Desenvolva o código da classe contendo o método main para testar o uso da classe Pessoa. Envie o código Java como resposta.
+ \dotfill
+ 
+\section{Get e Set}
+ \par
+ Atualize a suas classes que acessam e modificam atributos de uma Pessoa para utilizar os get e set. Indique o que foi alterado nos comentários do arquivo Java.
+ 
+ \dotfill
+
+\section{CPF} 
+\par
+Considere que na classe Pessoa tem um CPF como atributo. Como garantir que alguma pessoa não seja criada caso tenha CPF inválido e tampouco seja criado um objeto Pessoa sem informar o CPF? Implemente a solução e o teste no método main.
+
+\dotfill
+
+\section{Cursos}
+\par
+Utilizando como base a classe Pessoa implementada nas atividades anteriores, desenvolva um sistema de cursos, onde um Pessoa pode ser um Aluno ou um Instrutor.
+O sistema deve informar quais Alunos estão matriculados em qual curso e qual o instrutor de cada curso.
+Desenvolva as classes necessárias e a classe com o método main para testar a aplicação
+ 
+%%% as referências devem estar em formato bibTeX no arquivo referencias.bib
+% \printbibliography
+
+\end{document}

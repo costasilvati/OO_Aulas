@@ -1,0 +1,118 @@
+%%% Template para anotações de aula
+%%% Feito por Daniel Campos com base no template de Willian Chamma que fez com base no template de Mikhail Klassen
+
+
+
+\documentclass[12pt,a4paper, brazil]{article}
+
+%%%%%%% INFORMAÇÕES DO CABEÇALHO
+\newcommand{\workingDate}{\textsc{\selectlanguage{portuguese}\today}}
+\newcommand{\userName}{DesSoftware}
+\newcommand{\institution}{Universidade Positivo - Londrina}
+\usepackage{researchdiary_png}
+
+
+
+
+\begin{document}
+
+\begin{center}
+{\textbf {\huge Atividade Prática 1}}\\[5mm]
+{\large Desenvolvimento de Software 2023-1} \\
+{\large Prof. Me. Juliana Costa Silva} \\
+\today\\[5mm] %% se quiser colocar data
+\end{center}
+% TEMPLATE DE ATIVIDADE: https://www.overleaf.com/latex/templates/template-para-relatorio-tecnico-memorial-descritivo-utfpr/ywygvmqcqysy
+
+\section*{Orientações}
+
+\begin{itemize}
+  \item Desenvolva todas as atividades em linguagem Java, outras linguagens não serão aceitas na entrega;
+  \item É ideal compreender o código desenvolvido, entende o problema e, planeje a solução antes de implementar;
+  \item \textbf{Esta lista terá uma das atividades sorteada para resolução em sala de aula, manuscrita (no papel)}. Esta atividade será realizada unicamente no dia 20\/03\/2023 as 19:00hs com 20 minutos para entrega e sem consulta;
+  \item Será avaliada apenas a atividade entregue no papel, com enfase na lógica de programação e uso correto da linguagem, \textit{pequenos erros de sintaxe} serão desconsiderados;
+  \item A lista de atividades deve ser resolvida individualmente. Os alunos podem discutir as soluções e eventualmente ajudar a resolução de um colega, porém a cópia, integral ou parcial de código não é permitida. Desse modo alunos com códigos iguais ou com alta similaridade terão suas atividades ANULADAS, recebendo 0,0 como nota nesta atividade.
+\end{itemize}
+
+
+\vspace{0.5cm}
+
+
+\section{Produtos e descontos}
+\par
+Desenvolva uma aplicação em Java, simulando uma rotina de venda. Onde para cada produto informado, leia: \textit{nome, preço e quantidade}, escreva o nome do produto comprado e o valor total a ser pago, considerando que são oferecidos descontos pelo número de unidades compradas, segundo a tabela abaixo:	\\
+\begin{center}
+\begin{table}[!ht]
+\begin{tabular}{|c|c|}
+ \hline
+\textbf{Quatidade} & \textbf{Desconto} \\  \hline
+\textless{}= 10 unidades & 0\% \\  \hline
+11 a 20 unidades & 10\% \\  \hline
+21 a 50 unidades & 20\% \\  \hline
+\textgreater 50 unidades & 25\% \\  \hline
+\end{tabular}
+\end{table}
+\end{center} 
+
+ \dotfill
+
+ \section{Fibonacci}
+
+Os valores de Fibonacci formam uma sequência em que cada número é igual à soma dos dois anteriores. Os dois primeiros elemntos da sequência são, por padrão iguais a 1, como no exemplo abaixo:
+
+
+\textit{Ex: 1 1 2 3 5 8 13 ...}\\
+
+
+Desenvolva uma aplicação em Java que receba um número inteiro pelo e informe se ele faz parte da sequência de Fibonacci. 
+
+ \dotfill
+ 
+\section{Horário}
+\par
+Desenvolva uma aplicação em Java, que receba do usuário o tempo em segundos e escreva em horas, minutos e segundos. 
+
+ \dotfill
+
+\section{Datas}
+\par
+Desenvolva uma aplicação em Java, que receba como parâmetro um número inteiro relativo a um mês do ano, retorne uma string com o nome deste mês por extenso e retorne uma mensagem "Inválido!" para números que não reprentem um mês. Utilize o conceito de array para solucionar o problema. 
+
+ \dotfill
+
+\section{Salários}
+
+Para fazer um levantamento estatístico dos salários de seus funcionários, uma empresa precisa de um programa em Java que leia uma lista contendo os salários dos funcionários da empresa. Este programa deve exibir quantos funcionários ganham salário acima da média. Considerando que não há um número fixo de funcionários, o programa deve perguntar no início da execução:  quantos funcionários possui. 
+
+\dotfill
+
+\section{Valores Primos}
+\par
+Desenvolva uma aplicação Java que receba X números inteiros em um array e indique quais deles são números primos, para isto utilize um módulo que recebe como parâmetro o número e retorna verdadeiro se ele for primo e falso caso contrário. Receba também um valor inteiro N pelo teclado e imprima os N primeiros números primos do array. 
+ 
+ \dotfill
+
+\section{Repetições}
+\par
+Desenvolva um programa em Java que leia um array com 20 números inteiros. O programa deve imprimir os elementos do vetor exceto os elementos repetidos. 
+ 
+ \dotfill
+
+\section{Merge}
+Escreva uma aplicação Java que receba como parâmetros dois arrays contendo duas listas de preços (ponto flutuante) que já estão classificadas em ordem crescente. A função deverá fazer um \textit{merge} do conteúdo dos dois arrays em um terceiro (array resultante) mantendo, porém, a ordem crescente. Isto pode ser feito da seguinte forma (\textit{a exlicação abaixo é apenas uma ajuda, não é obrigatório segui-la fielmente}):
+\begin{itemize}
+    \item Inicialmente o programa se posiciona no início de ambos os arrays;
+    \item Se o elemento atual do array 1 for menor que o elemento atual do array 2 ele é transferido para o array resultante e o programa se desloca para o próximo elemento do array 1 (entenda-se por elemento atual aquele em que o programa está posicionado naquele determinado momento);
+    \item Se o elemento do array 2 for menor que o elemento do array 1 ele é transferido para o array resultante e o programa se desloca para o próximo elemento do array 2;
+    \item Isto irá acontecer até que se chegue ao fim de um dos vetores; 
+    \item Neste momento o programa descarrega o restante do array que ainda não terminou no array resultante e encerra a função.
+\end{itemize}
+
+
+
+
+
+%%% as referências devem estar em formato bibTeX no arquivo referencias.bib
+% \printbibliography
+
+\end{document}

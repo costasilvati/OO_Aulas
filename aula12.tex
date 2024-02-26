@@ -1,0 +1,316 @@
+\documentclass[11pt,aspectratio=43,ignorenonframetext,t]{beamer}
+
+% Presentation settings
+\mode<presentation>{
+  \usetheme[framenumber,titleframestart=1]{UoM_alex}
+  \usefonttheme{professionalfonts} % using non standard fonts for beamer
+  \usefonttheme{serif}             % set font to Arial
+  \usepackage{fontspec}
+  \setmainfont[Ligatures=TeX]{Arial}
+}
+
+% Handout settings
+\mode<article>{
+  \usepackage{fullpage}                  % use full page
+  \usepackage{fontspec}                  % set font to Arial
+    \setmainfont[Ligatures=TeX]{Arial}
+  \setlength{\parskip}{1.5\baselineskip} % correct beamer line spacings
+  \setlength{\parindent}{0cm}
+  \usepackage{enumitem}
+    \setlist[itemize]{topsep=0pt}
+  \definecolor{uomlinkblue}{HTML}{0071BC}
+}
+
+
+% Packages
+
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=HTML,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  commentstyle=\color{red}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{green!10},
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+}
+
+\usepackage{graphicx}  % for graphics files
+\usepackage{amsmath}   % assumes amsmath package installed
+  \allowdisplaybreaks[1] % allow eqnarrays to break across pages
+\usepackage{amssymb}   % assumes amsmath package installed 
+\usepackage{hyperref} % add hyperlinks to document. Settings are for accessiblity
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=uomlinkblue,
+    filecolor=uomlinkblue,      
+    urlcolor=uomlinkblue,
+	pdflang={en-GB},
+}
+\usepackage[document]{ragged2e} % left aligned text for accessibility
+% experimental - does fundamentally work, if with quite a bit of effort
+%\usepackage{axessibility} % LaTeX readable equations for accessibility
+%  \tagpdfsetup{tabsorder=structure,uncompress,activate-all,interwordspace=true}
+%  \pdfextension catalog{/Lang (en-GB)}
+%  \RequirePackage{luacode}
+%  \directlua{require("axessibility.lua")}
+\usepackage{unicode-math} % unicode maths for accessibility
+\usepackage{pdfcomment} % for alt text for accessibility
+\usepackage{rotating}  % allow portrait figures and tables
+\usepackage{subfigure} % allow matrices of figures
+\usepackage{float}     % allows H option on floats to force here placement
+\usepackage{multirow}  % allows merging of rows in tables
+\usepackage{tabularx}  % allows fixed width tables
+\usepackage{ctable}    % modifies \hline for use in table
+\usepackage{bm}        % allow bold fonts in equations
+\usepackage{pgf}       % allow graphics manipulation
+\usepackage{media9}    % allow interactive flash files to be embedded
+  \addmediapath{../media}
+\usepackage{etoolbox}
+  \makeatletter \preto{\@verbatim}{\topsep=0pt \partopsep=0pt} \makeatother  
+  
+% Custom commands
+\newcommand{\matlab}{\emph{\sc{Matlab}}}
+\newcommand{\maple}{\emph{\sc{Maple}}}
+\newcommand{\simulink}{\emph{\sc{Simulink}}}
+\newcommand{\dc}{d.c.}
+\newcommand{\ac}{a.c.}
+\newcommand{\rms}{RMS}
+\newcommand{\wgn}{{\tt wgn}}
+\newcommand{\sus}[1]{$^{\mbox{\scriptsize #1}}$}
+\newcommand{\sub}[1]{$_{\mbox{\scriptsize #1}}$}
+\newcommand{\chap}[1]{Chapter~\ref{#1}}
+\newcommand{\sect}[1]{Section~\ref{#1}}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\tab}[1]{Table~\ref{#1}}
+\newcommand{\equ}[1]{(\ref{#1})}
+\newcommand{\appx}[1]{Appendix~\ref{#1}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\Vrms}{Vrms}
+\newcommand{\Vpp}{V\sub{pp}}
+\newcommand{\otoprule}{\midrule[\heavyrulewidth]}         
+\newcolumntype{Z}{>{\centering\arraybackslash}X}  % tabularx centered columns 
+\makeatletter \DeclareRobustCommand{\em}{\@nomath\em \if b\expandafter\@car\f@series\@nil \normalfont \else \bfseries \fi} \makeatother
+\newcounter{example_number} % keep track of the example questions
+
+
+
+%%%%%%%%%%%%%%%%%% FRONT MATTER %%%%%%%%%%%%%%%%%%
+\title{Análise Orientada a objetos}
+\subtitle{Aula 11}
+\author{Prof. Me. Juliana Costa-Silva}
+
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%% TITLE SLIDE %%%%%%%%%%%%%%%%%%
+\mode<presentation>{ \frame{\titlepage \label{slide:a}}} 
+%\begin{figure}[!ht] 
+%\fbox{\includeslide[width=\textwidth]{slide:a}} \end{figure}
+
+%------------------------------------------------------------------------
+\mode<presentation>{
+\begin{frame}
+\frametitle{Na aula de hoje...} 
+\tableofcontents 
+\end{frame}
+}
+
+\section{Introdução}
+\begin{frame}{Na última aula...}
+ \begin{itemize}
+  \item Introdução a CRUD;
+  \item Construção de CRUD com Array;
+  \item Leitura de arquivos texto;
+ \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------
+\section{Criação de Arquivos}
+\begin{frame}{Criação de arquivos}
+
+\lstinputlisting[linerange={62-64}]{
+./codigo/CudCliente2/src/Arquivos.java }
+\vspace{0.3cm}
+- O método CriarArquivo, retorna um objeto do tipo \textbf{File}\\ 
+\pause
+- A classe \textit{JFileChooser} é responsável por exibir uma janela de 
+navegação, o método \textit{setFileSelectionMode} permite delimitar que tipo de 
+arquivo a janela irá selecionar. \\
+\pause
+- Para o código acima, utilizamos a opção 
+\textcolor{green!99}{FILES\_ONLY}, que permite apenas a seleção de arquivos.\\
+
+\end{frame}
+%--------------------------------------------------------------------------
+\begin{frame}{Testando o método CriarArquivo}{Classe principal}
+
+Na sua classe principal:
+\lstinputlisting[linerange={8-11}]{
+./codigo/CudCliente2/src/CudCliente2.java}
+% \vspace{0.3cm}
+\pause 
+\textcolor{red}{O que é guardado na variável result?} Execute a main e faça o 
+teste!
+
+\end{frame}
+%----------------------------------------------------------------------------
+\begin{frame}{CriarArquivo}{JFileChooser}
+  
+    \lstinputlisting[linerange={65-66}]{./codigo/CudCliente2/src/Arquivos.java }
+\vspace{0.5cm}
+\pause
+  \begin{itemize}
+    \item O método \textit{fileChooser.showSaveDialog(null);}, retorna:
+    \item 1 se a operação for cancelada.
+    \item 0 se o arquivo foi criado ou selecionado.
+  \end{itemize}
+ 
+\end{frame}
+%----------------------------------------------------------------------------
+\begin{frame}{CriarArquivo}{JFileChooser}
+  Nosso método ficou assim:
+\lstinputlisting[linerange={62-70}]{
+./codigo/CudCliente2/src/Arquivos.java }
+
+\pause
+  \begin{itemize}
+    \item Na linha 7 validamos se o usuário cancelou a operação;
+    \pause \item O que devemos fazer agora?
+  \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------
+\begin{frame}{Método CriarArquivo}{Acrescentado...}
+Acrescente mais algumas linhas ao método CriarArquivo
+%     \lstinputlisting[linerange={60-63}]{
+% ./codigo/CudCliente2/src/Arquivos.java }
+\includegraphics[height=0.14\paperheight]{criarArquivo.png} \\
+  \pause
+  \begin{itemize}
+   \item A variável diretorio recebe a ``pasta'' onde o arquivo foi salvo;
+   \pause \item O método mkdir() cria a pasta caso ela não exista;
+   \pause \item A string nomeArq recebe o nome do arquivo criado (o existente);
+   \pause \item A variável arquivo do tipo File instancia um objeto arquivo, 
+com  caminho no diretorio selecionado e com o nome definido pelo usuário.
+  \end{itemize}
+  \pause \textcolor{red}{Execute a main().}
+\end{frame}
+%----------------------------------------------------------------------------
+\begin{frame}{Método CriarArquivo}{Acrescentado...}
+Acrescente mais[2] algumas linhas ao método CriarArquivo
+    \lstinputlisting[linerange={75-82}]{
+./codigo/CudCliente2/src/Arquivos.java }
+% \includegraphics[height=0.14\paperheight]{criarArquivo.png} \\
+  \pause
+  \begin{itemize}
+   \item O processo para a criação de um escritor é igual ao de criação de 
+leitor;
+  \end{itemize}
+  \pause \textcolor{red}{Execute a main().}
+\end{frame}
+
+%----------------------------------------------------------------
+\section{Escrita em arquivos}
+\begin{frame}{Método Escreve}{BufferedWriter}
+Na classe de manipulação de arquivos crie o método escreve:
+    \lstinputlisting[linerange={85-94}]{
+./codigo/CudCliente2/src/Arquivos.java }
+% \includegraphics[height=0.14\paperheight]{criarArquivo.png} \\
+  \pause
+  \begin{itemize}
+   \item O método recebe um BufferedWriter (escritor), uma String (texto que 
+será escrito) e um valor booleano (indica se o buffer deve ser descarregado ou 
+não);
+  \end{itemize}
+
+\end{frame}
+%----------------------------------------------------------------------
+\section{Atividade I}
+\begin{frame}{Atividade I}{\textcolor{red}{Biblioteca Virtual}}
+ Busque o livro abaixo na Biblioteca Virtual:
+  \begin{columns}
+   \begin{column}{0.4\textwidth}
+     Java: Como programar\\
+     Capítulo 7: \cite{deitel2017java}\\
+     Páginas: 225 a 227\\
+     
+     \begin{enumerate}
+      \item Leia e Implemente a seção 7.16 \textbf{coleções e a classe 
+ArrayList};
+     \end{enumerate}     
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.5\paperheight]{deitel2017java.png} \\
+ \end{center}
+   \end{column}
+ \end{columns}
+ 
+ \end{frame}
+ %----------------------------------------------------------------------------
+\section{Entrada de Dados}
+\mode<presentation>{\begin{frame}{Entrada de dados}
+  A leitura do console (teclado) obtém dados a partir do objeto   
+\textit{System.in}.
+  \begin{itemize}
+    \item Objetos System.in leem somente bytes;
+    \item Por isso é necessário transforma-lo em um objeto 
+   \textit{InputStreamReader}.
+ \item O \textit{InputStreamReader} lê somente caracteres, então criamos 
+um \textit{BufferedReader}.
+   \item O \textit{BufferedReader} é um objeto que acopla vários 
+caracteres lidos (uma frase por exemplo).
+  \end{itemize}
+\end{frame}}
+%----------------------------------------------------------------------------
+\mode<presentation>{\begin{frame}{Utilizando \textit{BufferedReader}}
+   Criando um objeto \textit{BufferedReader}
+\small{\lstinputlisting[linerange={9-11}]{
+./cod/Aula7Leitura.java } }
+Declaração da String que receberá a leitura:
+\small{\lstinputlisting[linerange={12-13}]{
+./cod/Aula7Leitura.java } }\
+\end{frame}}
+%----------------------------------------------------------------------------
+\mode<presentation>{\begin{frame}{Utilizando \textit{BufferedReader}}
+  Executando a leitura:
+\small{\lstinputlisting[linerange={14-20}]{
+./cod/Aula7Leitura.java } }
+Para saber sobre as diferenças da classe Scanner leia:\\
+\href{https://www.devmedia.com.br/entrada-de-dados-classe-scanner/21366}[
+https://www.devmedia.com.br/entrada-de-dados-classe-scanner/21366]
+\end{frame}}
+ %----------------------------------------------------------------------
+\begin{frame}{Atividade II}
+ \begin{enumerate}
+   \setcounter{enumi}{1}
+  \item Atualize a atividade do CRUD de cliente, utilizando leitura e escrita 
+em arquivo;
+  \item Utilize também ArrayList no lugar dos Arrays convencionais;
+ \end{enumerate}
+ \end{frame}
+%-----------------------------------------------------------------------
+\section{Leitura recomendada}
+\begin{frame}{Leitura complementar}
+ Para mais informações sobre arrays e ArrayList em JAVA, leia:\\
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+     Java: Como programar 10{\textordfeminine} edição\\
+     Capítulo 7: \cite{deitel2017java}\\
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.5\paperheight]{deitel2017java.png} \\
+ \end{center}
+   \end{column}
+ \end{columns}
+\end{frame}
+\end{document}
